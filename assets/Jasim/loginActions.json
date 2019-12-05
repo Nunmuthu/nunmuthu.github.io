@@ -12,12 +12,6 @@
       "isDisabled": false
     },
     {
-      "name": "Save As Draft",
-      "color": "white",
-      "backgroundColor": "tomatto",
-      "isDisabled": false
-    },
-    {
       "name": "I am didsabled",
       "color": "white",
       "backgroundColor": "tomatto",

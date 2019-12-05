@@ -1,6 +1,6 @@
 [
   {
-    "name": "Save",
+    "name": "New Save",
     "color": "white",
     "backgroundColor": "tomatto",
     "isDisabled": true
@@ -12,7 +12,7 @@
     "isDisabled": true
   },
   {
-    "name": "Save As Draft",
+    "name": "New Save As Draft",
     "color": "white",
     "backgroundColor": "tomatto",
     "isDisabled": true

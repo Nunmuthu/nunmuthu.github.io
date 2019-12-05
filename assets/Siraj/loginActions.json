@@ -22,6 +22,12 @@
       "color": "white",
       "backgroundColor": "tomatto",
       "isDisabled": false
+    },
+    {
+      "name": "Extra",
+      "color": "white",
+      "backgroundColor": "tomatto",
+      "isDisabled": false
     }
   ]
   
