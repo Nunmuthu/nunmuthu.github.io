@@ -1,0 +1,249 @@
+SECTION-8: USING COMPOSER TOOLS FOR APPLICATION DEVELOPMENT
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Composer-cli
+	- Administration tool
+	After deploy
+		composer network ping
+			Network Administrator card should deploy
+		composer network list
+		composer card list
+			
+			
+		composer network 
+		
+42 . business network cadrs:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	User roles
+	business network card
+	
+	Peer admin
+		- responsible for carrying activity  node level
+	Network admin
+		- responsible for carrying the administration activity at app level
+		- Setup by peer admin
+	participants
+		- Roles defined in the application
+	
+	
+	
+	Card Contains
+		- Credintials
+		- Keys & certificates
+		- Connection profile
+	
+	User can have multiple cards
+	
+	card 
+		- crypto | Credintial
+		- Composer Connection Profile
+			- https:// [MSP|CA]
+			- grcps:// [Peers|Orderers]
+		
+	Stored on file system
+	./composer
+		cards
+			peerAdmin@Node-Name
+				-connection.json
+				-metadata.json
+				-credintials
+			NetworkAdmin@BNA-Name
+		
+		
+				Connection.json
+					name
+					type
+					orderers
+					ca
+					peers
+					Channel
+					
+	Composer card --help
+	composer card create 
+	
+43 - Deploying Network Application
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+>yo hyperledger-composer 
+	- Generate a business network
+>mkdir dist
+>cd dist
+>composer archieve create --help
+>composer archieve create -t dir -n ../
+
+	package.json
+		name@version
+		
+	Deploying BNA Locally
+		1. Launch your fabricc network
+		2. Verify | create the peer admin card
+		3. Install the network application to fabric
+		4. Start BNA on fabric
+		
+	Launch your fabricc network:
+		>./startFabric.sh 
+	
+	Verify | create the peer admin card:
+		>./createPeerAdminCard.sh 
+		
+	Install the network application to fabric
+		>composer network install -a test-bna@0.0.1.bna -c PeerAdmin@hlfv1
+		
+	Start BNA on fabric:
+		>composer network start -c PeerAdmin@hlfv1 -n test-bna -V 0.0.1 -A admin - S adminpw
+		
+		Import the Network Administrator's card
+		>composer card import --help
+		>composer card list --help
+		
+		>composer card import -f ./admin/@test-bna-card
+		
+44 - Network Application Management
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+How to use Ping & List cmd to check availability of application
+	>composer network ping
+	>composer network list
+	
+	>composer network ping -c admin@test-bna
+		command succeded
+	>composer network list -c admin@test-bna
+	
+	
+	upgrading the bussinesnetwork application
+		create archieve for the new version of BNA
+		Install the new version of archieve
+			>composer network install
+		List the network application/upgrade the network:
+			>composer network upgrade
+			
+			
+		create archieve for the new version of BNA:
+			change version in package.json
+			>composer archieve create -t dir -n ../
+		Install the new version of archieve
+			>composer network install -a test-bna@0.0.2.bna -c PeerAdmin@hlfv1
+		upgrade the network:
+			>composer network upgrade -c PeerAdmin@hlfv1 -n test-bna -V 0.0.2
+			
+		check:
+			>composer network ping -c admin@test-bna
+				See: Business network version was changed
+				
+
+				
+			
+		
+		qs:
+		1.Which composer command  would you use for deploying an archive (network)
+		2.You are the admin of a business network application. A user of the app informs you that the application is not available, which command would you use to check availability? network ping
+		3.Which card would you use for installing the network (archive) for the business network application? Peer Admin
+		4.Business network admin card is created as part of the composer network start  command (True)
+		5.Composer commands can be executed against the remote playground. E.g., using the connection profile for the Playground you may deploy an archive file using the composer network ... command 
+		False,The composer command executes against the Fabric runtime, Playground is a web application that sits in front of Fabric
+		6:To upgrade to a new version, simply invoke the upgrade command with new version of the BNA archive file
+		False, First archive file need to be installed with the install command
+		
+45: Excercise:
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Exercise: Create & Deploy Network Application
+Objective
+Familiarization with the composer tool commands
+Steps
+1. Use the yo composer generator to create a network application project. Provide a name to your network app2.
+
+2. Generate the archive file for the network application
+
+    Under sub-folder:   dist
+
+    Name:    myapp
+
+3. Deploy the archive to Playground - try it out using the test feature
+
+4. Install & Start the Business Network Application
+
+5. Import the NetworkAdmin card to your local file system using the composer CLI tool
+
+6. Use the ping command to check if the app is available 
+
+7. Run the command to get information about the assets and registries
+
+46: Rest Server Overview:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Overview & walk through
+RestFul API
+	A set of constaints
+	
+	Rest Server: It is a standalone nodeJS process that exposes the business network resources as REST API.
+		http://localhoat:3000/explorer
+	>composer-rest-server
+		- I'll use the interactive mode. Before I launch the composer rest server, I need to make sure that my hyperledger fabric environment is up and I also need to ensure that the business network application is available
+		- docler ls -a
+    	
+		
+	Easy access to thr network resource specifications
+	Developers can user it for:
+		Explore
+		Testing
+		visibility into transactions
+	Application code will be simpler and easy to code
+	
+	Rest Server is setup with a common card and it is a problem
+	
+	qs:
+	1. REST Server is: one of the composer tools
+	2. A developer of front end application that connects to the REST server, does not have to learn the internals of the network application as they deal with plain REST Api
+	3. Composer REST server can be launched in interactive & command line mode.
+	4. Which one is the critical parameter that need to be provided for launching the composer REST server? Card Name
+	5. Advantages of Rest Server.
+	
+47: Rest Server Security:
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+TLS & Authentication
+Multi User setup
+	passport 
+		- passportJs.org
+		- setup Auth strategy
+		
+	launch identity
+	need to setup wallet for the user in Rest Server API
+	
+	Can the users TRUST 
+	
+	1: By default the REST server can be accessed by any user. REST server supports user authentication by way of Passport Authentication Strategies (Many)
+	2: REST server level identity is the same as the Blockchain identity: False
+	3: The credentials of the user for REST server are managed outside the Fabric infrastructure : True
+	4: As a Best Practice REST server should be configured with TLS/Https security, User Authentication and Mullti user mode
+	5: In multi user setup there is a need to use a Launch identity.
+		
+		
+48: Yo - Angular Applications
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Typical Solution Architecture
+Walk through of Yo tool for Angular
+Resources
+
+Steps:
+	1. >./startFabric.sh
+	2. >composer-rest-server
+	3. yo hyperledger-composer:angular
+			- it will some information of asset  from the composer rest server
+	
+49: Intro to composer SDK:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	useful npm modeules:
+		client
+			hide protocol details
+		admin
+			automation of admin
+		common
+			common interface
+		runtime
+		
+		
+		Client Module:
+			
+			
+		qs:
+		1. Which module would use for monitoring the availability of the business network application? Admin
+		2. The Composer REST server exposes the Network Application Assets as REST API Resources. Which module do you think the REST server is using? Client
+		3. The code for transactions (chaincode) interfaces with the _________ module

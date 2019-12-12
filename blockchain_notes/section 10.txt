@@ -1,0 +1,71 @@
+
+
+SECTION 10: COMPOSER SDK ? API CODING THE CLIENT APPS:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+67. API: Frequently Asked questions
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+68. Business card Managemnent
+	Card Storge + Wallet
+	Api for managing Cards
+		IdCard
+		BusinessNetworkCardStore
+		NetworkCardStoreManager
+	manage-cards.js
+	source repository: https://github.com/acloudfan/HLF-Fabric-Api
+	
+
+	Business Network Card:
+		user interacts with the composer tool
+		The composer tool need business network card to interact with the comoposer runtime
+		The business network card needs
+			credintials
+			keys & Certificates
+			Connection Profiles
+
+
+		Common module
+			Id cards
+			Business N
+				composer-wallet-filesystem
+				
+				
+		qs:
+		1. Business network card encapsulates information on Credintials, Keys and Certificates
+		2> BusinessNetworkCardStore class is abstract
+		3> Which one is NOT a default wallet type? Database
+		4. An instance of the BusinessNetworkCardStore  is created:
+		
+		
+Admin Connection:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	source repository: https://github.com/acloudfan/HLF-Fabric-Api
+	Admin Connection admin-connection.js
+	BusinessNetworkDefinition update-bna.js
+	
+	Admin Connection
+		Administrative actions on Fabric runtime
+		Administrative actions on BusinessNetworkApplication
+		
+	BusinessNetworkConnection;
+		Execute Transactions, CRUD Operations, Recieve events
+		
+	 card Related Function:
+		>composer card <subcommand>
+		
+		 getAllCards
+		 hasCard
+		 importCard
+		 deleteCard
+		 exportCard
+	
+	BNA mangements function:
+		
+		>composer network <subcommand>
+		
+		installstart
+		list
+		ping
+		reset
+		upgrade
+		
