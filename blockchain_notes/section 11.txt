@@ -1,0 +1,53 @@
+
+SECTION 11: COMPOSER SDK / API CODING THE Transaction processors:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+76. Embedded runtime for testing
+
+ut-harness.js
+ut-test-harness.js
+
+77. crash course on mocha and chai
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ Mocha & chai are used for unit testing
+ Repeatable | Automated test cases
+ Improved code quality
+    > npm i -g mocha
+    >npm i chai
+
+mocha -test framework for nodejs
+    nodejs.org
+    mocha-demo.js
+
+    decribe{ //Test Suite
+        it // Test cases
+        decribe{ // Nested Test Suite
+            it // Test cases
+
+        }
+    }
+
+    Hooks - before
+                // r
+
+78. Writing Unit Test Cases for Network Application
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+test/logic.js
+mocha-ut-harness-template.js
+test-file.js
+
+1. Arrange
+2. Act 
+3. Assert
+4. Execute
+
+79. Runtime API for Transaction Processing Functions
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Runtime>API
+Runtime>AssetRegistery
+Runtime>ParticipantRegistry
+
+81. Query invocation in Transaction Processing Functions
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

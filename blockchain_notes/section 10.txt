@@ -68,4 +68,85 @@ SECTION 10: COMPOSER SDK ? API CODING THE CLIENT APPS:
 		ping
 		reset
 		upgrade
+
+		update-BNA.js
+		admin-connection.js
 		
+70. Business Network Connection class
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Business Network Connection class
+	Connection
+	Disonnect
+	Pinging
+		bn-connnection-util.js
+		test-bn-util.js
+
+71.Submitting a Transactions
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=
+Working with Factory
+Runtime>FActory
+
+Get access to the Factory
+Client>BusinessNetworkConnection
+Common>BusinessNetworkDefinition
+
+Common>Resource
+Common>Relationship
+
+bn-factory-submit-txn.js
+
+72.Registries:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+client>Registry
+get-registries.js
+
+Client>
+	Asset Registries
+	Participant Registries
+	Transaction Registries
+	Historian (Read Only)
+	Identity Registry (Read Only)
+
+Runtime>assetRegistry
+Runtime>ParticipantRegistry
+
+73.Resources:
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+COmmon>Resource
+add-Resources.js
+
+
+
+74 Querying the Registries:
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+named & Dynamic query
+
+client_query.js
+
+named query
+	defined as part of the business network module
+	exposed as REST API by composer-rest-server component
+
+	.query(named, parameters_objects)
+
+dynamic query
+	Constructed dynamically @runtime
+
+	.buildQuery(query_statement)
+	.query(queryReturned, parameters_objects)
+	
+
+75. Subscribing to Events:
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Using Client API
+Using the REST server
+
+subscribe-event.js
+subscribe-event-ws.js
+
+	Subscriber recieves ALL events
+		criteria based event subscription NOT Supported
+			As of January 2017
+			Application logic need filtering for events
+
+	ws://localhost:3000 (subscribe-event-ws.js)
