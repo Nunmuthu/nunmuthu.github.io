@@ -206,5 +206,64 @@ card
 	
 	2.bind the identity
 	composer identity issue --help
-	
-	
+
+63. Access Control language (Part 1 of 2)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Resource: https://github.com/acloudfan/HLF-Course-Domain-Model/tree/master/airlinev9
+
+implementation
+	Programmatic
+		based on user context & transaction data
+	Declarative
+		Defined by ACL
+		fixed name permissions.acl
+		if file missed allow everyone
+		The access control language provides this declarative access control over the elements of the domain
+
+Rule Controls permission:
+	Simple rules:
+		Controls access to namespace, asset or property of an assert by a participant type or participant instance
+	Conditional Rule:
+		Boolean javascript expression evaluaed at runtime to ALLOW or DENY access to the resource by the participant
+
+	rule Name-of-Rule {
+		description: "provide description in quotes",
+		resource: "Fully qualified resource specification",
+		participant: "Fully qualified participant specification"
+		operation: ALL *or* Comma seperated CRUD
+		action: ALLOW *or* DENY
+	}
+
+	Specific resource by
+		class: ord.test.namespaceName.ClassName
+		instance: ord.test.namespaceName.ClassName#CRAFT01
+		Namespace: org.test.namespaceName.*
+				   org.test.namespaceName.**
+
+		System namespace;
+				org.hyperledger.composer.system
+					composer network
+					composer participant
+					composer identity
+				org.hyperledger.composer.**
+
+	Specific to participant:
+		System Level:
+			org.hyperledger.composer.system.NetworkAdmin.
+
+		Applevel:
+
+	Operation:
+		CREATE,READ,UPDATE,DELETE
+
+	Permissions.acl
+		Not exist -> Granted
+		exist
+			-> check allow/DENY	
+				-> allow -> Granted
+				-> deny -> denied
+
+	64 EX: TODO
+
+HLF-Fabric-API
+Transaction & conditiona;
