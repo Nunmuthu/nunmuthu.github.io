@@ -37,7 +37,7 @@ SECTION 10: COMPOSER SDK ? API CODING THE CLIENT APPS:
 		4. An instance of the BusinessNetworkCardStore  is created:
 		
 		
-Admin Connection:
+69.Admin Connection:
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	source repository: https://github.com/acloudfan/HLF-Fabric-Api
 	Admin Connection admin-connection.js
