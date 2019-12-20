@@ -51,3 +51,18 @@ Runtime>ParticipantRegistry
 
 81. Query invocation in Transaction Processing Functions
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+82. Implementing Programmatic Access Control
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+common>Resource
+-getCurrentParticipant
+    getFullyQualifiedType
+    getFullyQualifiedIdentifier
+
+83. Emitting events and Integrating with external systems
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.Emit()
+.getSerializaer()
+
+event definition as created as part of the model
