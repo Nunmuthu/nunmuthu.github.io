@@ -1,0 +1,36 @@
+8. Introduction Getting started with D3 js
++++++++++++++++++++++++++++++++++++++++++++++
+9.Setting up your environment
++++++++++++++++++++++++++++++++++++++++++++++
+chrome - best browser
+sublime
+d3js.org d3v5
+
+10.Understanding Svgs
+++++++++++++++++++++++++++++++++++++++++++++
+Svg - scalable vectot graphics
+    - 1000 + svg can render in second
+
+    e.g 
+    Google JPEG 23000 bytes
+    Google SVG 310 bytes
+
+rect
+    x,y,width,height,fill,stroke,stroke-width
+circle
+    cx,cy,r,fill
+ellipse
+    cx,cy,rx,ry,fill
+line
+    x1,x2,y2,y1,sroke,stroke-width
+text
+    x,y,font-size,text-anchor
+path
+    d,stroke,fill
+
+11.Adding svgs with D3js
+=+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+D3 Select
+D3 Append
+D3 Attr
+Method change in D3
