@@ -1,0 +1,80 @@
+17.Introduction - Scales and Axes
++++++++++++++++++++++++++++++++++++++++++++++
+to build simple bar charts
+
+18: Linear Scales:
++++++++++++++++++++++++++++++++++++++++++++++
+scales a functions that map from an input
+domain to an output range.
+
+
+linearScale()
+.domain([0,xx])
+.range([0,xx])
+
+19. Lograthmic scales:
++++++++++++++++++++++++++++++++++++++++++++++
+logScale()
+.domain([0,xx])
+.range([0,xx])
+.base(10)
+
+20.TimeScale:
++++++++++++++++++++++++++++++++++++++++++++
+scaleTime()
+.domain([new Date(),new Date()])
+.range([0,xx])
+
+21.Ordinal Scales:
++++++++++++++++++++++++++++++++++++++++++++++++
+var color  = d3.scaleOrdinal()
+.domain(["xx","yy"])
+.range(["RED","ORANGE"])
+consoel.log(color("XX")) // "RED"
+
+var color  = d3.scaleOrdinal()
+.domain(["xx","yy"])
+.range(d3.schemeCategory10)
+consoel.log(color("XX")) // "RED"
+
+https://github.com/d3/d3-scale-chromatic
+
+22. Band Scales:
++++++++++++++++++++++++++++++++++++++++++++++
+
+var x = d3.scaleOrdinal()
+.domain(["xx","yy"])
+.range([0,500])
+.paddinginner(0.3)
+.paddingOuter(0.2)
+
+consoel.log(x("XX")) // 209
+
+23. D3 min, max and extent
++++++++++++++++++++++++++++++++++++++++++++
+min - moinimum value
+max - maximum value
+extent - both min and max value
+
+
+24. Margins & Groups:
++++++++++++++++++++++++++++++++++++++++++++++
+
+Groups are invisible containers for structuring SVGs
+Have translation attributes for moving multiple SVGs at once.
+
+25. Axes and labels
+++++++++++++++++++++++++++++++++++++++++++++++
+
+26.Making a barchart
+++++++++++++++++++++++++++++++++++++++++++++++
+
+27.Project 1-StarBreak Coffee
+++++++++++++++++++++++++++++++++++++++++++++++
+excel file
+bar char tfor website
+3.13.0
+
+Activity
+
+not cleared in band, axis

@@ -1,0 +1,49 @@
+30.Introduction- The Basics of design
+++++++++++++++++++++++++++++++++++++++++++++++++
+Knowledge to construct the data
+
+31.Designing for clarity
+++++++++++++++++++++++++++++++++++++++++
+Best Practise for visualization design
+    Design Factor
+        Make the data easy to iinterpret
+        Build credible visualizations
+        Keep the focus on the important factors
+    Edward Tufte's designprinciples
+        Graphical Integrity
+        lie factors
+        chart junk
+        Cata-to-ink ratio
+
+32. Subjectivity in design
+++++++++++++++++++++++++++++++++++++++++++
+Important goals
+    grab users attention
+    Encourage further exploration
+    build new and interesting type of visualizations
+
+34. Design toolkit
+++++++++++++++++++++++++++++++++++++++++
+    Position
+    Size
+    (Grey) Value
+    Texture
+    Color
+    Orientation
+    Shape
+
+Types of Data:
+
+    Quantitative (numerical)
+    Catogorical (categories)
+    ordinal (rankings)
+
+Color Selection
+    Don't use more than 5-8 colours for categories
+    Don't use a diveging color scale for Quantitative data
+    consider color bind users (~5% of the population)
+
+colorbrewer2.org
+
+35.Introduction to sketching
++++++++++++++++++++++++++++++++++++++++++
