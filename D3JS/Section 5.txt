@@ -1,9 +1,0 @@
-39. Making it dynamic
-++++++++++++++++++++++++++++++++++++++
-
-40. Looping with intervals:
-+++++++++++++++++++++++++++++++++++++
-d3.interval()
-
-41.Adding an update function
-+++++++++++++++++++++++++++++++++++++++++
