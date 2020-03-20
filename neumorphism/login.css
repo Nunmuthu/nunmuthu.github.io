@@ -36,7 +36,7 @@
 
 #LoginForm button:hover {
   cursor: pointer;
-  color: rgba(0, 0, 0, 0.2);
+  color: rgba(216, 162, 44, 0.7);
   box-shadow: inset -7px -7px 20px 0 rgba(209, 176, 106, 0.7), inset 7px 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -51,5 +51,5 @@
 }
 
 #LoginForm label:hover {
-    color: rgba(0, 0, 0, 0.2);
+    color: rgba(216, 162, 44, 0.7);
 }
